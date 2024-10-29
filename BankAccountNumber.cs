@@ -15,34 +15,18 @@
     {
         class BankAccountNumber
         {
-           public long AccountNumber {get;  set;}
-           public decimal Balance {get;set;}
-           
-           public BankAccountNumber(long accountNumber)
-           {
-            this.AccountNumber = accountNumber;
-           }
-           public void Deposit(decimal amount)
-           {
-            Balance = Balance + amount;
-            System.Console.WriteLine($"Deposit was succesfully. Balance: {Balance}");
-           }
+            public long  AccountNumber { get; set; }
+            public decimal Balance { get; set; }
 
-           public void Withdraw(decimal amount)
-           {
-             if(Balance >= amount)
-             {
-                Balance = Balance - amount;
-                System.Console.WriteLine($"Withdraw was succesfully. Balance: {Balance}");
-             }
-             else
-             {
-                System.Console.WriteLine($"Insufficient balance. Balance: {Balance}");
-             }
-           }
-           public void GetBalance()
-           {
-            System.Console.WriteLine($"Balance: {Balance}");
-           }
-        }
-    }
+            public BankAccountNumber()
+            {
+                Balance = 0;
+            }
+        
+            public decimal GetBalance()
+            {
+                return Balance;
+            }
+            
+        }         
+}

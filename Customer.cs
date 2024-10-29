@@ -10,16 +10,15 @@ namespace ADVOOP
 {
     class Customer
     {
-       public string Name{ get; private set; }
-       public BankAccountNumber BankAccount{ get; private set; }
+        //ctor with name
+        public string Name { get; set; } = string.Empty;
+        public BankAccountNumber Account = new();
 
-       public Customer(string Name)
-       {
-        this.Name = Name;
-        Random random= new Random();
-        BankAccount.AccountNumber = (long) random.Next(100,999);
-        System.Console.WriteLine(BankAccount);
-
-       }
+        public Customer(string name)
+        {
+            this.Name = name;
+            Random random= new Random();
+            Account.AccountNumber = random.Next(9996,9999);
+        }
     }
 }
